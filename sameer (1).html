@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sameer Jewellery | Premium Collection</title>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --gold: #d7b46a;
+  --dark: #11100e;
+  --cream: #fff8ed;
+  --muted: #bdb5a8;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--dark);
+  color: white;
+}
+
+header {
+  padding: 28px 16px 24px;
+  text-align: center;
+  background: linear-gradient(145deg, #17130d, #302316, #100e0b);
+  border-bottom: 1px solid #8c6a36;
+}
+
+.brand {
+  color: var(--gold);
+  font-size: 13px;
+  letter-spacing: 4px;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  margin: 0;
+  font-size: clamp(28px, 7vw, 43px);
+  color: #f3d89b;
+}
+
+header p {
+  color: #ddd1bd;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 12px 0 0;
+}
+
+/* SPECIAL OFFER */
+.offer {
+  position: relative;
+  overflow: hidden;
+  margin: 20px 14px 28px;
+  padding: 27px 15px;
+  text-align: center;
+  border-radius: 20px;
+  border: 1px solid #e4c17c;
+  background:
+    radial-gradient(ellipse at top, #755026, transparent 65%),
+    linear-gradient(135deg, #3d1427, #170e13 70%);
+  box-shadow: 0 8px 30px #0007;
+}
+
+.offer-label {
+  display: inline-block;
+  padding: 7px 13px;
+  border-radius: 30px;
+  color: #382510;
+  background: linear-gradient(90deg, #f8e4ad, #d3a653);
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+}
+
+.offer h2 {
+  margin: 17px 0 8px;
+  color: #ffe7ad;
+  font-size: clamp(25px, 6vw, 36px);
+}
+
+.offer h2 span {
+  color: #ffffff;
+}
+
+.offer p {
+  color: #f2dfc9;
+  font-size: 14px;
+  line-height: 1.7;
+  margin: 0 0 19px;
+}
+
+.offer-btn {
+  display: inline-block;
+  padding: 13px 22px;
+  background: linear-gradient(100deg, #f6dda0, #d5aa5c);
+  color: #24170b;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: bold;
+  box-shadow: 0 4px 12px #0004;
+}
+
+/* SECTION HEADING */
+.section-heading {
+  text-align: center;
+  padding: 0 12px;
+  margin: 28px 0 20px;
+}
+
+.section-heading .small {
+  color: var(--gold);
+  font-size: 11px;
+  letter-spacing: 3px;
+}
+
+.section-heading h2 {
+  font-size: 25px;
+  margin: 9px 0;
+  color: var(--cream);
+}
+
+.section-heading p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* PRODUCT GRID */
+.products {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 13px;
+  padding: 0 12px 25px;
+  max-width: 1150px;
+  margin: auto;
+}
+
+.product {
+  min-width: 0;
+  overflow: hidden;
+  background: linear-gradient(150deg, #24211b, #171614);
+  border: 1px solid #51432d;
+  border-radius: 15px;
+  padding: 8px;
+  box-shadow: 0 5px 16px #0003;
+  transition: border-color .2s;
+}
+
+.product img {
+  display: block;
+  width: 100%;
+  height: 175px;
+  object-fit: contain;
+  background: #fffdf8;
+  border-radius: 10px;
+}
+
+.product h3 {
+  color: #f1d49a;
+  font-size: 13px;
+  line-height: 1.5;
+  min-height: 38px;
+  margin: 12px 2px 8px;
+}
+
+.product .number {
+  display: block;
+  color: #bcb1a0;
+  font-size: 10px;
+  margin-top: 3px;
+  font-weight: normal;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 11px 4px;
+  background: #168b4b;
+  color: white;
+  border-radius: 9px;
+  text-decoration: none;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1.4;
+}
+
+.btn:active,
+.offer-btn:active {
+  transform: scale(.97);
+}
+
+/* FOOTER */
+footer {
+  border-top: 1px solid #443827;
+  padding: 25px 15px;
+  text-align: center;
+  background: #0b0a09;
+}
+
+footer h3 {
+  color: var(--gold);
+  margin: 0 0 8px;
+}
+
+footer p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.back {
+  display: inline-block;
+  margin-top: 8px;
+  padding: 12px 19px;
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  text-decoration: none;
+  border-radius: 25px;
+  font-size: 13px;
+}
+
+@media (min-width: 600px) {
+.products {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 22px;
+  padding: 15px;
+  max-width: 600px;
+  margin: auto;
+}.products {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+    padding-left: 22px;
+    padding-right: 22px;
+  }
+
+  .product {
+    padding: 12px;
+  }
+
+ 
+  .product img {
+  width: 100%;
+  height: 300px;
+  object-fit: contain;
+  background: #fffdf8;
+  border-radius: 10px;
+}  height: 300px;
+  }
+
+  .btn {
+    font-size: 13px;
+  }
+}
+
+@media (min-width: 900px) {
+  .products {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">ELEGANCE • STYLE • BEAUTY</div>
+  <h1>💎 Sameer Jewellery</h1>
+  <p>Mumbai Jewellery Collection<br>
+  Discover designs for every special occasion.</p>
+</header>
+
+<!-- SPECIAL OFFER -->
+<section class="offer">
+  <div class="offer-label">✦ SPECIAL JEWELLERY OFFER ✦</div>
+
+  <h2>BUY 2 <span>GET 1 FREE</span></h2>
+
+  <p>
+    More sparkle, more style!<br>
+    Choose 3 eligible jewellery items and pay for only 2.
+  </p>
+
+  <a class="offer-btn"
+     href="https://wa.me/919810214827?text=Hello%2C%20I%20want%20to%20know%20about%20the%20Buy%202%20Get%201%20Free%20jewellery%20offer."
+     target="_blank" rel="noopener">
+    CLAIM YOUR OFFER →
+  </a>
+</section>
+
+<div class="section-heading">
+  <div class="small">OUR COLLECTION</div>
+  <h2>Explore Jewellery</h2>
+  <p>Choose your favourite design and enquire directly.</p>
+</div>
+
+<div class="products" id="products"></div>
+
+<footer>
+  <h3>Sameer Jewellery</h3>
+  <p>
+    Thank you for visiting our collection.<br>
+    Contact us on WhatsApp for product details and orders.
+  </p>
+
+  <a class="back" href="index.html">
+    ← Back to Main Website
+  </a>
+</footer>
+
+<script>
+const photos = [
+  "IMG-20261009-WA0008.jpg",
+  "IMG-20261009-WA0009.jpg",
+  "IMG-20261009-WA0010.jpg",
+  "IMG-20261009-WA0011.jpg",
+  "IMG-20261009-WA0012.jpg",
+  "IMG-20261009-WA0013.jpg",
+  "IMG-20261009-WA0014.jpg",
+  "IMG-20261009-WA0015.jpg",
+  "IMG-20261009-WA0016.jpg",
+  "IMG-20261009-WA0017.jpg",
+  "IMG-20261009-WA0018.jpg",
+  "IMG-20261009-WA0019.jpg",
+  "IMG-20261009-WA0020.jpg",
+  "IMG-20261009-WA0021.jpg",
+  "IMG-20261009-WA0022.jpg",
+  "IMG-20261009-WA0023.jpg",
+  "IMG-20261009-WA0024.jpg",
+  "IMG-20261009-WA0026.jpg",
+  "IMG-20261009-WA0027.jpg",
+  "IMG-20261009-WA0028.jpg",
+  "IMG-20261009-WA0029.jpg",
+  "IMG-20261009-WA0030.jpg",
+  "IMG-20261009-WA0032.jpg",
+  "IMG-20261009-WA0033.jpg",
+  "IMG-20261009-WA0034.jpg",
+  "IMG-20261009-WA0035.jpg",
+  "IMG-20261009-WA0036.jpg",
+  "IMG-20261009-WA0038.jpg"
+];
+
+const area = document.getElementById("products");
+const whatsappNumber = "919810214827";
+
+photos.forEach((photo, i) => {
+  const card = document.createElement("article");
+  card.className = "product";
+
+  const img = document.createElement("img");
+  img.src = photo;
+  img.alt = "Jewellery design " + (i + 1);
+  img.loading = "lazy";
+
+  const title = document.createElement("h3");
+  title.textContent = "Jewellery Design " + (i + 1);
+
+  const number = document.createElement("span");
+  number.className = "number";
+  number.textContent = "DESIGN " + String(i + 1).padStart(2, "0");
+  title.appendChild(number);
+
+  const btn = document.createElement("a");
+  btn.className = "btn";
+
+  const message = encodeURIComponent(
+    "Hello Sameer Jewellery! I want details about Jewellery Design " +
+    (i + 1) + ". Please share the price and availability."
+  );
+
+  btn.href = "https://wa.me/" + whatsappNumber + "?text=" + message;
+  btn.target = "_blank";
+  btn.rel = "noopener";
+  btn.textContent = "WhatsApp Enquiry ↗";
+
+  img.onerror = function() {
+    img.alt = "Image missing: " + photo;
+    img.style.display = "none";
+
+    const warning = document.createElement("p");
+    warning.style.cssText =
+      "font-size:11px;color:#ffaaaa;overflow-wrap:anywhere;";
+    warning.textContent = "Photo missing: " + photo;
+    card.insertBefore(warning, title);
+  };
+
+  card.appendChild(img);
+  card.appendChild(title);
+  card.appendChild(btn);
+  area.appendChild(card);
+});
+</script>
+
+</body>
+</html>
